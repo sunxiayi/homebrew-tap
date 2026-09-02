@@ -1,8 +1,8 @@
 class RepoAgentScan < Formula
-  desc "Scan coding-agent instruction files for risky patterns"
+  desc "Scan agent instruction and SKILL.md files for risky patterns"
   homepage "https://repoagentkit.com/agent-instruction-security-scanner"
-  url "https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.1.3/repo-agent-instruction-security-scan-1.1.3.tar.gz"
-  sha256 "2ce1c9ef7b450ca52d6401ce732f122bbbee0de288e1515a63e629f8d4a5c8b8"
+  url "https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.2.0/repo-agent-instruction-security-scan-1.2.0.tar.gz"
+  sha256 "d47c96668525357f60d0b9528118bc668f8eaabf7e2fd0fe87809536115851da"
   license "MIT"
 
   depends_on "node"
@@ -18,9 +18,18 @@ class RepoAgentScan < Formula
 
       Run the test suite before committing.
     MARKDOWN
+    (testpath/"skills/review").mkpath
+    (testpath/"skills/review/SKILL.md").write <<~MARKDOWN
+      ---
+      name: review
+      description: Review repository changes.
+      ---
+
+      Run the test suite before reporting completion.
+    MARKDOWN
 
     output = shell_output("#{bin}/repo-agent-scan . --fail-on none")
-    assert_match "Scanned 1 instruction file(s)", output
+    assert_match "Scanned 2 instruction file(s)", output
     assert_match "found 0 review prompt(s)", output
   end
 end
