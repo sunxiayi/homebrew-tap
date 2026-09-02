@@ -12,7 +12,8 @@ Then scan a repository without sending its files to a service:
 repo-agent-scan .
 ```
 
-The formula is pinned to the signed-off source release and checksum in
+The formula is pinned to the v1.1.3 release archive, its SHA-256 checksum, and
+its signed GitHub build provenance in
 [`Formula/repo-agent-scan.rb`](Formula/repo-agent-scan.rb). The scanner supports
 AGENTS.md, CLAUDE.md, GEMINI.md, Cursor rules, Copilot instructions, Claude
 rules, and Windsurf rules. It produces text, JSON, or SARIF 2.1.0 reports.

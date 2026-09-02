@@ -1,8 +1,8 @@
 class RepoAgentScan < Formula
   desc "Scan coding-agent instruction files for risky patterns"
   homepage "https://repoagentkit.com/agent-instruction-security-scanner"
-  url "https://github.com/sunxiayi/repo-agent-instruction-security-scan/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "063baecb97197d05c8324883f44f25f1f8c82c1ca5f3aba7301a68e4e44e8b10"
+  url "https://github.com/sunxiayi/repo-agent-instruction-security-scan/releases/download/v1.1.3/repo-agent-instruction-security-scan-1.1.3.tar.gz"
+  sha256 "2ce1c9ef7b450ca52d6401ce732f122bbbee0de288e1515a63e629f8d4a5c8b8"
   license "MIT"
 
   depends_on "node"
